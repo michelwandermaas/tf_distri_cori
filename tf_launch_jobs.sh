@@ -65,5 +65,5 @@ for (( i=1; i<=$NUM_COL; i++)); do
 		NUM[$i]=$(expr ${NUM[$i]} - 1)
 		COMMANDS[$i]="$FULL_COMMAND --job_name=worker --task_index=${NUM[$i]}"		
 	fi
-	echo ${COMMANDS[$i]} > stdin_tf_node${i}.out | ssh ${NODES[$i]}
+	echo ${COMMANDS[$i]} | ssh ${NODES[$i]}
 done
